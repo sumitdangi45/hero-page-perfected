@@ -59,6 +59,13 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-brand: var(--brand);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-ink: var(--brand-ink);
+  --color-mint: var(--mint);
+  --color-mint-deep: var(--mint-deep);
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-hand: "Caveat", cursive;
 }
 
 :root {
@@ -95,6 +102,11 @@
   --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
   --sidebar-border: oklch(0.929 0.013 255.508);
   --sidebar-ring: oklch(0.704 0.04 256.788);
+  --brand: oklch(0.55 0.13 156);
+  --brand-dark: oklch(0.33 0.062 162);
+  --brand-ink: oklch(0.23 0.042 255);
+  --mint: oklch(0.977 0.012 155);
+  --mint-deep: oklch(0.945 0.032 155);
 }
 
 .dark {
@@ -140,5 +152,126 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+}
+
+@layer components {
+  .btn-brand {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg font-semibold shadow-lg transition-colors;
+    background-color: var(--brand-dark);
+    color: oklch(0.985 0.005 155);
+  }
+  .btn-brand:hover {
+    background-color: oklch(0.27 0.055 162);
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border bg-card font-semibold transition-colors;
+    border-color: oklch(0.23 0.042 255 / 0.16);
+    color: var(--brand-ink);
+  }
+  .btn-outline:hover {
+    border-color: var(--brand);
+  }
+
+  /* Anni site header */
+  .site-nav-link {
+    @apply relative text-sm font-medium text-muted-foreground transition-colors hover:text-brand-ink;
+  }
+  .site-nav-link-active {
+    @apply relative font-semibold text-brand-ink;
+  }
+  .site-nav-link-active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1.35rem;
+    height: 2px;
+    background: var(--brand-ink);
+  }
+
+  /* Hero illustration */
+  .hero-blob {
+    background: radial-gradient(
+      closest-side,
+      oklch(0.68 0.15 160 / 0.85),
+      oklch(0.8 0.1 160 / 0.45) 62%,
+      transparent 82%
+    );
+    filter: blur(22px);
+  }
+  .laptop-frame {
+    background: linear-gradient(180deg, oklch(0.9 0.008 260), oklch(0.72 0.015 260));
+  }
+  .laptop-base {
+    background: linear-gradient(180deg, oklch(0.86 0.01 260), oklch(0.64 0.015 260));
+  }
+  .laptop-screen {
+    background: oklch(0.185 0.03 258);
+    color: oklch(0.95 0.012 250);
+  }
+  .mock-sidebar {
+    background: oklch(0.16 0.028 258);
+  }
+  .mock-card {
+    background: oklch(0.235 0.035 258);
+    border: 1px solid oklch(1 0 0 / 0.07);
+  }
+  .mock-dim {
+    color: oklch(0.95 0.012 250 / 0.62);
+  }
+  .mock-faint {
+    color: oklch(0.95 0.012 250 / 0.38);
+  }
+  .mock-accent {
+    color: oklch(0.8 0.14 160);
+  }
+  .mock-chip-bg {
+    background: oklch(0.32 0.06 165 / 0.4);
+  }
+  .mock-ico {
+    background: oklch(1 0 0 / 0.08);
+  }
+  .mock-avatar {
+    background: linear-gradient(135deg, oklch(0.78 0.11 70), oklch(0.6 0.14 25));
+  }
+  .mock-badge-green {
+    background: oklch(0.55 0.13 160 / 0.35);
+    color: oklch(0.85 0.13 160);
+  }
+  .mock-badge-amber {
+    background: oklch(0.7 0.14 75 / 0.3);
+    color: oklch(0.85 0.13 80);
+  }
+  .mock-badge-slate {
+    background: oklch(1 0 0 / 0.1);
+    color: oklch(0.95 0.012 250 / 0.6);
+  }
+  .float-chip {
+    background: var(--card);
+    border: 1px solid oklch(0.23 0.042 255 / 0.08);
+    box-shadow: 0 20px 32px -14px oklch(0.23 0.042 255 / 0.28);
+    color: var(--brand-ink);
+  }
+  .chip-ico {
+    @apply flex h-7 w-7 items-center justify-center rounded-lg;
+  }
+  .chip-ico-green {
+    background: oklch(0.55 0.14 160);
+    color: oklch(0.985 0.005 155);
+  }
+  .chip-ico-blue {
+    background: oklch(0.55 0.16 255);
+    color: oklch(0.985 0.005 155);
+  }
+  .chip-ico-purple {
+    background: oklch(0.55 0.2 300);
+    color: oklch(0.985 0.005 155);
+  }
+  .sticky-note {
+    background: oklch(0.99 0.002 110);
+    color: var(--brand-ink);
+    box-shadow: 0 16px 30px -12px oklch(0.23 0.042 255 / 0.3);
   }
 }
