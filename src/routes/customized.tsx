@@ -92,7 +92,7 @@ const RECENT = [
 
 function CustomizedPage() {
   return (
-    <div className="min-h-screen bg-mint font-sans text-brand-ink">
+    <div className="min-h-screen overflow-x-clip bg-mint font-sans text-brand-ink">
       <SiteHeader />
       <main>
         <section className="mx-auto max-w-7xl px-4 pb-14 pt-10 sm:px-6 lg:pt-16">
@@ -149,7 +149,7 @@ function HeroCopy() {
 function HeroVisual() {
   return (
     <div className="relative mx-auto w-full max-w-2xl pt-8 lg:pt-4">
-      <div className="hero-blob absolute left-1/2 top-1/2 h-[80%] w-[90%] -translate-x-1/2 -translate-y-1/2 rounded-full" />
+      <div className="hero-blob absolute left-1/2 top-1/2 h-[95%] w-[105%] -translate-x-1/2 -translate-y-1/2 rounded-full" />
 
       <div className="sticky-note absolute left-0 top-0 z-20 rotate-[-7deg] rounded-md px-4 py-2 font-hand text-xl leading-tight sm:left-6 sm:text-2xl">
         Your Idea <span className="inline-block">↗</span>
@@ -206,7 +206,7 @@ function HeroVisual() {
 function DashboardMockup() {
   return (
     <div className="flex h-full w-full">
-      <aside className="mock-sidebar flex w-[27%] flex-col gap-1.5 p-2.5">
+      <aside className="mock-sidebar flex w-[27%] flex-col gap-2 p-3">
         <div className="flex items-center gap-1.5 px-1 pb-1.5">
           <svg viewBox="0 0 32 32" className="h-3.5 w-3.5" aria-hidden="true">
             <path d="M16 3 29 27H3Z" fill="oklch(0.72 0.15 160)" />
@@ -238,12 +238,12 @@ function DashboardMockup() {
           <div className="mock-avatar h-4 w-4 rounded-full" />
         </div>
 
-        <div className="mt-2">
-          <p className="text-[10px] font-bold">Good Morning,</p>
-          <p className="text-[8px] mock-dim">Let&apos;s build something great!</p>
+        <div className="mt-3">
+          <p className="text-[11px] font-bold">Good Morning,</p>
+          <p className="text-[8.5px] mock-dim">Let&apos;s build something great!</p>
         </div>
 
-        <div className="mt-2 grid grid-cols-3 gap-1.5">
+        <div className="mt-2.5 grid grid-cols-3 gap-2">
           <div className="mock-card rounded-md p-1.5">
             <p className="text-[6.5px] mock-dim">Total Projects</p>
             <p className="text-[13px] font-bold">12</p>
@@ -265,7 +265,7 @@ function DashboardMockup() {
           </div>
         </div>
 
-        <div className="mock-card mt-1.5 h-12 rounded-md p-1">
+        <div className="mock-card mt-2 h-16 rounded-md p-1.5">
           <svg viewBox="0 0 200 60" className="h-full w-full" preserveAspectRatio="none">
             <defs>
               <linearGradient id="mockChartFill" x1="0" y1="0" x2="0" y2="1">
@@ -286,10 +286,10 @@ function DashboardMockup() {
           </svg>
         </div>
 
-        <div className="mt-2">
-          <p className="text-[8px] font-semibold">Recent Projects</p>
+        <div className="mt-2.5">
+          <p className="text-[8.5px] font-semibold">Recent Projects</p>
           {RECENT.map((p) => (
-            <div key={p.name} className="mt-1.5 flex items-center gap-1.5">
+            <div key={p.name} className="mt-2 flex items-center gap-1.5">
               <span className="mock-ico flex h-3.5 w-3.5 items-center justify-center rounded">
                 <p.icon className="mock-dim h-2 w-2" />
               </span>
