@@ -10,33 +10,115 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AiAutomationRouteImport } from './routes/ai-automation'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CustomizedRouteImport } from './routes/customized'
+import { Route as DigitalGrowthRouteImport } from './routes/digital-growth'
+import { Route as PrebuiltRouteImport } from './routes/prebuilt'
+import { Route as PricingRouteImport } from './routes/pricing'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AiAutomationRoute = AiAutomationRouteImport.update({
+  id: '/ai-automation',
+  path: '/ai-automation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CustomizedRoute = CustomizedRouteImport.update({
+  id: '/customized',
+  path: '/customized',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitalGrowthRoute = DigitalGrowthRouteImport.update({
+  id: '/digital-growth',
+  path: '/digital-growth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrebuiltRoute = PrebuiltRouteImport.update({
+  id: '/prebuilt',
+  path: '/prebuilt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/ai-automation': typeof AiAutomationRoute
+  '/contact': typeof ContactRoute
+  '/customized': typeof CustomizedRoute
+  '/digital-growth': typeof DigitalGrowthRoute
+  '/prebuilt': typeof PrebuiltRoute
+  '/pricing': typeof PricingRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/ai-automation': typeof AiAutomationRoute
+  '/contact': typeof ContactRoute
+  '/customized': typeof CustomizedRoute
+  '/digital-growth': typeof DigitalGrowthRoute
+  '/prebuilt': typeof PrebuiltRoute
+  '/pricing': typeof PricingRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/ai-automation': typeof AiAutomationRoute
+  '/contact': typeof ContactRoute
+  '/customized': typeof CustomizedRoute
+  '/digital-growth': typeof DigitalGrowthRoute
+  '/prebuilt': typeof PrebuiltRoute
+  '/pricing': typeof PricingRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/ai-automation'
+    | '/contact'
+    | '/customized'
+    | '/digital-growth'
+    | '/prebuilt'
+    | '/pricing'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/ai-automation'
+    | '/contact'
+    | '/customized'
+    | '/digital-growth'
+    | '/prebuilt'
+    | '/pricing'
+  id:
+    | '__root__'
+    | '/'
+    | '/ai-automation'
+    | '/contact'
+    | '/customized'
+    | '/digital-growth'
+    | '/prebuilt'
+    | '/pricing'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AiAutomationRoute: typeof AiAutomationRoute
+  ContactRoute: typeof ContactRoute
+  CustomizedRoute: typeof CustomizedRoute
+  DigitalGrowthRoute: typeof DigitalGrowthRoute
+  PrebuiltRoute: typeof PrebuiltRoute
+  PricingRoute: typeof PricingRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +130,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ai-automation': {
+      id: '/ai-automation'
+      path: '/ai-automation'
+      fullPath: '/ai-automation'
+      preLoaderRoute: typeof AiAutomationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/customized': {
+      id: '/customized'
+      path: '/customized'
+      fullPath: '/customized'
+      preLoaderRoute: typeof CustomizedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digital-growth': {
+      id: '/digital-growth'
+      path: '/digital-growth'
+      fullPath: '/digital-growth'
+      preLoaderRoute: typeof DigitalGrowthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/prebuilt': {
+      id: '/prebuilt'
+      path: '/prebuilt'
+      fullPath: '/prebuilt'
+      preLoaderRoute: typeof PrebuiltRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AiAutomationRoute: AiAutomationRoute,
+  ContactRoute: ContactRoute,
+  CustomizedRoute: CustomizedRoute,
+  DigitalGrowthRoute: DigitalGrowthRoute,
+  PrebuiltRoute: PrebuiltRoute,
+  PricingRoute: PricingRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
