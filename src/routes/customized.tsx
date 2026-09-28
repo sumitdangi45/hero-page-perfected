@@ -22,7 +22,6 @@ import {
   Users,
   Zap,
 } from "lucide-react";
-import { SiteHeader } from "@/components/site-header";
 import { FeaturedWork } from "@/components/featured-work";
 
 export const Route = createFileRoute("/customized")({
@@ -94,8 +93,8 @@ const RECENT = [
 function CustomizedPage() {
   return (
     <div className="min-h-screen overflow-x-clip bg-mint font-sans text-brand-ink">
-      <SiteHeader />
       <main>
+
         <section className="mx-auto max-w-7xl px-4 pb-14 pt-10 sm:px-6 lg:pt-16">
           <div className="grid items-center gap-14 lg:grid-cols-[1fr_1.15fr] lg:gap-10">
             <HeroCopy />
