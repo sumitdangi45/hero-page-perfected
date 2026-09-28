@@ -15,7 +15,7 @@ const TECH = ["React", "TypeScript", "Flask", "MongoDB", "Python/ML", "Gemini AP
 export function FeaturedWork() {
   const [tab, setTab] = useState<"web" | "app">("web");
   return (
-    <section className="bg-background py-14">
+    <section className="bg-background pt-10 pb-12">
       <div className="mx-auto max-w-7xl px-4 text-center sm:px-6">
         <span className="inline-flex items-center gap-2 rounded-full bg-mint-deep px-4 py-1.5 text-sm font-semibold text-brand-ink">
           <Gem className="h-4 w-4 text-brand-dark" />
@@ -49,7 +49,7 @@ export function FeaturedWork() {
         </div>
       </div>
 
-      <div className="mt-4 grid items-center gap-10 px-4 lg:grid-cols-[1.68fr_1fr] lg:gap-8 lg:pl-0 lg:pr-[5%]">
+      <div className="mt-4 grid items-center gap-10 px-4 lg:grid-cols-[62.5%_1fr] lg:gap-[1.6%] lg:pl-0 lg:pr-[4.5%]">
         <img
           src={mockup}
           alt="KisanSathi AI agricultural assistant on laptop and phone"
@@ -63,34 +63,34 @@ export function FeaturedWork() {
           <h3 className="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-[2.4rem] lg:leading-[1.05]">
             KisanSathi — <span className="text-brand-dark">AI Agricultural Assistant</span>
           </h3>
-          <p className="mt-3 text-[17px] leading-snug text-muted-foreground">
+          <p className="mt-2 text-[16.5px] leading-snug text-muted-foreground">
             An AI-powered agricultural assistant platform to help farmers with crop recommendations,
             disease detection, fertilizer guidance, weather alerts, and more — all in one place.
           </p>
-          <ul className="mt-5 max-w-[520px] space-y-2.5 lg:max-w-none border-b border-border pb-5">
+          <ul className="mt-4 max-w-[560px] space-y-2 lg:max-w-none border-b border-border pb-4">
             {POINTS.map((p, i) => (
               <li key={p} className="flex items-center gap-4">
-                <span className="flex h-11 w-12 shrink-0 items-center justify-center rounded-lg bg-mint-deep text-lg font-extrabold text-brand-dark">
+                <span className="flex h-10 w-12 shrink-0 items-center justify-center rounded-lg bg-mint-deep text-lg font-extrabold text-brand-dark">
                   0{i + 1}
                 </span>
-                <span className="text-[16px] leading-snug text-muted-foreground">{p}</span>
+                <span className="text-[15.5px] leading-[1.3] text-muted-foreground">{p}</span>
               </li>
             ))}
           </ul>
-          <div className="mt-5 flex gap-4">
+          <div className="mt-4 flex gap-4">
             <span className="shrink-0 pt-2 text-sm font-semibold text-brand-ink">Technologies Used</span>
             <div className="flex flex-wrap gap-2">
               {TECH.map((t) => (
                 <span
                   key={t}
-                  className="rounded-full border border-border bg-card px-4 py-1.5 text-sm font-medium text-brand-ink shadow-sm"
+                  className="rounded-full border border-border bg-card px-3.5 py-1 text-[13px] font-medium text-brand-ink shadow-sm"
                 >
                   {t}
                 </span>
               ))}
             </div>
           </div>
-          <div className="mt-7 flex flex-wrap gap-4">
+          <div className="mt-6 flex flex-wrap gap-4">
             <Link to="/contact" className="btn-brand px-8 py-3 text-base">
               View Project <ArrowRight className="h-5 w-5" />
             </Link>
