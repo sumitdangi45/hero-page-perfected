@@ -21,12 +21,13 @@ export function FeaturedWork() {
           <Gem className="h-4 w-4 text-brand-dark" />
           Featured Work
         </span>
-        <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-brand-ink sm:text-[2.6rem]">
+        <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-brand-ink sm:text-[2.9rem]">
           Custom Solutions Built for <span className="text-brand-dark">Real Businesses</span>
         </h2>
-        <p className="mx-auto mt-3 max-w-2xl text-[15px] leading-snug text-muted-foreground">
-          Take a look at one of our custom projects built to solve real-world problems. From idea to
-          deployment, we turn unique business needs into powerful digital solutions.
+        <p className="mx-auto mt-3 max-w-3xl text-[17px] leading-snug text-muted-foreground">
+          Take a look at one of our custom projects built to solve real-world problems.
+          <br className="hidden sm:block" />
+          From idea to deployment, we turn unique business needs into powerful digital solutions.
         </p>
         <div className="mt-6 inline-flex rounded-full border border-border bg-muted p-1">
           {(
@@ -48,31 +49,31 @@ export function FeaturedWork() {
         </div>
       </div>
 
-      <div className="mx-auto mt-6 grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1.25fr_1fr]">
+      <div className="mt-4 grid items-center gap-10 px-4 lg:grid-cols-[1.68fr_1fr] lg:gap-8 lg:pl-0 lg:pr-[5%]">
         <img
           src={mockup}
           alt="KisanSathi AI agricultural assistant on laptop and phone"
-          className="w-full rounded-2xl"
+          className="w-full"
           loading="lazy"
         />
         <div>
           <span className="inline-flex items-center gap-2 rounded-full bg-mint-deep px-3 py-1 text-xs font-semibold text-brand-dark">
             <Code2 className="h-4 w-4" /> Custom Web + AI Platform
           </span>
-          <h3 className="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-[2.1rem]">
+          <h3 className="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-brand-ink sm:text-[2.4rem] lg:leading-[1.05]">
             KisanSathi — <span className="text-brand-dark">AI Agricultural Assistant</span>
           </h3>
-          <p className="mt-2 text-[15px] leading-snug text-muted-foreground">
+          <p className="mt-3 text-[17px] leading-snug text-muted-foreground">
             An AI-powered agricultural assistant platform to help farmers with crop recommendations,
             disease detection, fertilizer guidance, weather alerts, and more — all in one place.
           </p>
-          <ul className="mt-5 space-y-3 border-b border-border pb-5">
+          <ul className="mt-5 max-w-[520px] space-y-2.5 lg:max-w-none border-b border-border pb-5">
             {POINTS.map((p, i) => (
               <li key={p} className="flex items-center gap-4">
                 <span className="flex h-11 w-12 shrink-0 items-center justify-center rounded-lg bg-mint-deep text-lg font-extrabold text-brand-dark">
                   0{i + 1}
                 </span>
-                <span className="text-[15px] leading-snug text-muted-foreground">{p}</span>
+                <span className="text-[16px] leading-snug text-muted-foreground">{p}</span>
               </li>
             ))}
           </ul>
