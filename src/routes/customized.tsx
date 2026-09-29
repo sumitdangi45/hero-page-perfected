@@ -23,6 +23,7 @@ import {
   Zap,
 } from "lucide-react";
 import { FeaturedWork } from "@/components/featured-work";
+import { ProjectShowcase } from "@/components/project-showcase";
 
 export const Route = createFileRoute("/customized")({
   head: () => ({
@@ -104,7 +105,7 @@ function CustomizedPage() {
         <StatsBar />
         <TrustedBy />
         <FeaturedWork />
-        <CtaBanner />
+        <ProjectShowcase />
       </main>
     </div>
   );

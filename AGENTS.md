@@ -11,10 +11,12 @@
 
 ## Project decisions
 
-- Shared site chrome lives in `src/components/site-header.tsx`; every page renders
-  `<SiteHeader />` from its own route component — one nav source of truth.
+- Shared site chrome lives in `src/components/site-header.tsx`; routes may omit it while the
+  final homepage navigation is pending — one nav source of truth when restored.
 - Brand colors are semantic tokens (`--brand`, `--brand-dark`, `--brand-ink`, `--mint`,
   `--mint-deep`) in `src/styles.css`; illustration/mockup styling also lives in the
   `@layer components` block there — never hardcode colors in components.
 - Anni site font is Plus Jakarta Sans (body/headings) + Caveat (handwritten doodles),
   loaded via `<link>` in `src/routes/__root.tsx`.
+- Portfolio recommendation requests use a public one-shot TanStack server function and the
+  Lovable AI Gateway; prompts and credentials stay server-side.
